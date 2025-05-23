@@ -12,11 +12,11 @@ pipeline {
         stage('Deploy to Kubernetes') {
             steps {
                 withKubeConfig(
-                    credentialsId: k8-token,
-                    serverUrl: https://3B038E5EC8BBFE74265172A90B7220E6.gr7.ap-south-1.eks.amazonaws.com,
-                    clusterName: EKS-1,
-                    contextName: '', // can be omitted if not required
-                    namespace: webapps,
+                    credentialsId: env.K8S_CREDENTIALS_ID,
+                    serverUrl: env.K8S_SERVER_URL,
+                    clusterName: env.K8S_CLUSTER_NAME,
+                    contextName: '',
+                    namespace: env.K8S_NAMESPACE,
                     caCertificate: ''
                 ) {
                     sh 'kubectl apply -f deployment-service.yml'
@@ -27,15 +27,15 @@ pipeline {
         stage('Verify Deployment') {
             steps {
                 withKubeConfig(
-                    credentialsId: k8-token,
-                    serverUrl: https://D1FE5DFC91FBAC141CA126D117F84B19.gr7.ap-south-1.eks.amazonaws.com,
-                    clusterName: EKS-1,
+                    credentialsId: env.K8S_CREDENTIALS_ID,
+                    serverUrl: env.K8S_SERVER_URL, // Should be the same cluster
+                    clusterName: env.K8S_CLUSTER_NAME,
                     contextName: '',
-                    namespace: webapps ,
+                    namespace: env.K8S_NAMESPACE,
                     caCertificate: ''
                 ) {
-                    sh 'kubectl get svc -n webapps'
-                    sh 'kubectl get pods -n webapps'
+                    sh 'kubectl get svc -n $K8S_NAMESPACE'
+                    sh 'kubectl get pods -n $K8S_NAMESPACE'
                 }
             }
         }

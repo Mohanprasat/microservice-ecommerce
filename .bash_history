@@ -79,3 +79,87 @@ git push origin main --force
 sudo systemctl start jenkins
 sudo systemctl enable jenkins
 sudo systemctl status jenkins
+ls
+ls -ll
+sudo nano Jenkinsfile
+git init
+git add && commit -m "firstdeploy"
+git add .
+git commit -m "deployed"
+git push origin main
+sudo systemctl start jenkins
+sudo systemctl enable jenkins
+sudo systemctl status jenkins
+sudo cat Jenkinsfile
+ sudo nano Jenkinsfile
+git init
+git add .
+git commit -m "deployed"
+git push origin main
+aws eks --region ap-south-1  update-kubeconfig --name EKS-1
+aws configure
+aws configure
+aws eks --region ap-south-1  update-kubeconfig --name EKS-1
+sudo nano jenkins-sa.yaml
+kubectl apply -f jenkins-sa.yaml
+SECRET_NAME=$(kubectl -n kube-system get sa jenkins-sa -o jsonpath="{.secrets[0].name}")
+kubectl -n kube-system get secret $SECRET_NAME -o jsonpath="{.data.token}" | base64 --decode
+kubectl get all -n webapps
+kubectl get ns
+kubectl describe secret mysecretname -n webapps
+ls
+kubectl -n kube-system get secret jenkins-sa-token -o jsonpath="{.data.token}" | base64 --decode
+cat <<EOF | kubectl apply -f -
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: jenkins-sa
+  namespace: kube-system
+EOF
+
+cat <<EOF | kubectl apply -f -
+apiVersion: v1
+kind: Secret
+metadata:
+  name: jenkins-sa-token
+  namespace: kube-system
+  annotations:
+    kubernetes.io/service-account.name: jenkins-sa
+type: kubernetes.io/service-account-token
+EOF
+
+cat <<EOF | kubectl apply -f -
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: jenkins-sa-binding
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+- kind: ServiceAccount
+  name: jenkins-sa
+  namespace: kube-system
+EOF
+
+kubectl -n kube-system get secret jenkins-sa-token -o jsonpath="{.data.token}" | base64 --decode
+kubectl describe secret mysecretname -n webapps
+kubectl apply -f secret-token.yml -n webapps
+kubectl apply -f secret-token.yaml -n webapps
+ sudo nano Jenkinsfile
+ sudo nano Jenkinsfile
+git init
+git add .
+git commit -m "deployeed"
+git push origin main
+kubectl apply -f deployment-service.yml
+ls
+sudo nano deployment-service.yml
+sudo nano deployment-service.yml
+ sudo nano Jenkinsfile
+git init
+git add . Jenkinsfile
+git commit -m "deployed"
+git push origin main
+kubectl apply -f deployment-service.yml
