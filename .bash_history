@@ -219,3 +219,61 @@ git commit -m "mondayy"
 git push origin main
 sudo systemctl restart jenkins
 sudo systemctl start jenkins
+sudo nano Jenkinsfile
+
+sudo nano Jenkinsfile
+git init
+git add .
+git commit -m "mondayjen"
+git push origin main
+sudo nano deployment-service.yaml
+kubect apply -f deployment-service.yaml
+kubectl apply -f deployment-service.yaml
+git init 
+git add .
+git commit -m "mondayjenk"
+git push origin main
+vim secret.yaml
+kubectl apply -f secret.yaml -n webapps
+kubectl create serviceaccount my-sa -n webapps
+kubectl get secret $(kubectl get serviceaccount my-sa -n webapps -o jsonpath="{.secrets[0].name}") -n webapps -o yaml
+kubectl apply -f secret.yaml -n webapps
+ls
+rm svc-acc.yml
+rm role-bind.yml
+rm secret-token.yml
+rm jenkins-sa.yaml
+rm app-role.yml 
+rm  deployment-service.yaml
+ls
+rm deployment-service.yml
+rm Jenkinsfile
+ls
+rm secret.yaml
+ls
+rm final project ( ).pptx
+rm 'final project ( ).pptx'
+ls
+kubectl create namespace webapps
+kubectl get namespace
+vim svc-acc.yaml
+kubectl apply -f svc-acc.yaml
+vim app-role.yaml
+kubectl apply -f app-role.yaml
+vim role-bind.yaml
+kubectl apply -f role-bind.yaml
+vim secret.yaml
+kubectl apply -f secret.yaml -n webapps
+kubectl apply -f secret.yaml 
+kubectl describe secret mysecretname -n webapps
+kubectl apply -f secret.yaml -n webapps
+kubectl get ns
+kubectl delete secret mysecretname -n webapps
+kubectl apply -f secret.yaml -n webapps
+vim secret.yaml
+kubectl apply -f secret.yaml -n webapps
+kubectl describe secret mycustomsecretname -n webapps
+kubectl apply -f secret.token.yaml -n webapps
+ls
+sudo nano Jenkinsfile
+sudo nano Jenkinsfile
