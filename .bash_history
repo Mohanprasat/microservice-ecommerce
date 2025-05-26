@@ -163,3 +163,32 @@ git add . Jenkinsfile
 git commit -m "deployed"
 git push origin main
 kubectl apply -f deployment-service.yml
+kubectl apply -f deployment-service.yml
+sudo nano deployment-service.yml
+ sudo nano Jenkinsfile
+git init
+git add . Jenkinsfile
+git commit -m "deployed"
+git push origin main
+kubectl get all -n webapps
+
+ sudo nano Jenkinsfile
+git add . Jenkinsfile
+git commit -m "deployed"
+git push origin main
+sh "kubectl config view"
+~/.kube/config
+ls
+[[ ! -z "$KUBECONFIG" ]] && echo "$KUBECONFIG" || echo "$HOME/.kube/config"
+ls
+export KUBECONFIG=/home/ubuntu/kubeconfig.yaml
+aws eks update-kubeconfig --ap-south-1 
+aws eks update-kubeconfig --ap-south-1 -n webapps
+aws eks update-kubeconfig --ap-south-1 -n EKS-1
+aws configure
+kubectl get ns
+kubectl get all -n webapps
+aws configure
+aws eks update-kubeconfig --ap-south-1 -n EKS-1
+git add . Jenkinsfile
+ sudo nano Jenkinsfile
