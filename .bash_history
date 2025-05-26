@@ -192,3 +192,30 @@ aws configure
 aws eks update-kubeconfig --ap-south-1 -n EKS-1
 git add . Jenkinsfile
  sudo nano Jenkinsfile
+ls
+kubectl apply -f deployment-service.yml
+git init
+git add .
+git commit -m "mondaycommit"
+git pull 
+sudo nano Jenkinsfile
+sudo nano deployement-service.yml
+sudo nano deployment-service.yml
+kubectl apply -f deployment-service.yml
+git init
+git add .
+git commit -m "monday"
+git push origin main
+git fetch https://github.com/Mohanprasat/microservice-ecommerce.git
+kubectl apply -f deployment-service.yml --dry-run=client -o yaml
+sudo docker pull kanha05/emailservice:latest
+sudo nano 
+sudo nano deployment-service.yaml
+kubect apply -f deployment-service.yaml
+kubectl apply -f deployment-service.yaml
+git init
+git add .
+git commit -m "mondayy"
+git push origin main
+sudo systemctl restart jenkins
+sudo systemctl start jenkins
